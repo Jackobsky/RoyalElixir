@@ -1,0 +1,231 @@
+body {
+   min-height: 100vh;
+    
+    margin: 0;
+    background: linear-gradient(107.89deg, #5C158F 31.16%, #8000D9 74.02%);
+    font-family: 'Roboto', sans-serif;
+}
+
+footer {
+    position: fixed;       /* pins it to the viewport */
+    bottom: 0;             /* bottom of screen */
+    left: 20px;               /* left edge */
+    width: 100%;           /* full width */
+    padding: 20px 0;
+    text-align: left;
+    color: white;
+    font-size: 14px;
+    
+    z-index: 1000;         /* ensures it stays above other content */
+}
+
+.crown{
+    width: 175px;
+    height: auto;
+    display: flex;
+    margin: 50px auto 0 200px;
+}
+
+.mainparagraph {
+    text-align: left;
+    color: white;
+    margin: auto 0 0 130px;
+}
+
+.Rubric {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 128px;
+    line-height: 84px;
+    margin: 0;
+}
+
+.Tagline{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 36px;
+    margin: 40px 0 40px 0;
+    color: #D5D2D2;
+}
+
+.Infotext{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 28px;
+    margin: 0 0 40px 0;
+    color: #FFFFFF;
+    max-width: 600px;
+}
+
+.Sodafacts{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 50px;
+    margin: 0 0 0 33px;
+    color: #FFFFFF;
+    max-width: 600px;
+    text-decoration: underline;
+}
+
+.energyimg{
+    width: 60px;
+    height: auto;
+    display: block;
+    
+    top: 335px;
+    left: 52px;
+
+    position: absolute;
+}
+
+.energyimghidden{
+    display: none;
+}
+
+.AvailableHere {
+    background-color: #530986;
+    border-radius: 8px;
+    padding: 8px 5px 0 5px;
+    font-family: 'Roboto', sans-serif;
+
+    position: fixed;
+    bottom: 15px;          /* distance from bottom */
+    left: 50%;             /* center horizontally */
+    transform: translateX(-50%);
+    
+    z-index: 1000;
+}
+
+
+.AvailableRubric{
+    justify-self: center;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 28px;
+    color: #FFFFFF;
+
+    margin-bottom: 0;
+}
+
+.store-logo{
+    width: 125px;
+    height: auto;
+    
+    margin: 0 15px 0 15px;
+}
+
+.store-logo:first-child{
+    width: 135px;
+    height: auto;
+}
+
+.store-logo:last-child{
+    transform: translateY(-15px);
+}
+
+.ad-container{
+    display: flex;
+    flex-direction: column; /* stack ads vertically */
+    gap: 20px; /* spacing between ads */
+
+}
+
+.ad1{
+    width: 45vh;
+    height: auto;
+    display: block;
+    
+    position:  absolute;
+    top: 10vh;
+    right: 47vh;
+}
+
+.ad2{
+    width: 30vh;
+    height: auto;
+    display: block;
+    
+    position:  absolute;
+    top: 5vh;
+    right: 100px;
+}
+
+.ad3{
+    width: 30vh;
+    height: auto;
+    display: block;
+    
+    position:  absolute;
+    bottom: 4vh;
+    right: 100px;
+}
+
+@media (max-width: 1675px) {
+   .mainparagraph {
+    display: flex;
+    flex-direction: column;
+    align-items: center;    /* horizontal center */
+    justify-content: center; /* vertical center if needed */
+    margin: 0 auto;
+    text-align: center;
+    }
+
+    .AvailableHere {
+        position: relative; /* allow it to flow with content */
+        bottom: auto;       /* reset bottom */
+        left: auto;         /* reset horizontal centering */
+        transform: none;    /* reset transform */
+        margin: 20px auto;  /* optional spacing at bottom */
+        text-align: center; /* center content */
+        border-radius: 0;
+    }
+
+    .Sodafacts{
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .energyimghidden{
+        width: 80px;
+        height: auto;
+        display: block;
+        position: relative;
+        margin: 30px auto 0 auto;
+    }
+
+    .energyimg{
+        display: none;
+    }
+
+    .crown{
+        width: 200px;
+        height: auto;
+        margin: 20px auto 0 auto;
+        position: relative;
+        justify-content: center;
+    }
+
+    .ad-container {
+        display: flex;
+        flex-direction: column; /* stack vertically */
+        align-items: center;    /* center horizontally */
+        justify-content: center;
+        margin: 15px auto;      /* spacing from other content */
+    }
+
+    .ad1, .ad2, .ad3 {
+        position: relative;     /* remove absolute positioning */
+        top: auto;
+        right: auto;
+        width: 60%;             /* scale ads */
+        max-width: 400px;
+        margin: 20px 0;         /* spacing between stacked ads */
+    }
+
+    .ad1{
+        margin-bottom: 0px;
+    }
+}
