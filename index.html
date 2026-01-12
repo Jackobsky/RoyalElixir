@@ -13,7 +13,10 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Krona ikon -->
     <img src="images/crown.png" alt="crown" class="crown">
+
+    <!-- Huvudparagrafen, dvs allt till vänster -->
     <div class="mainparagraph">
         <h1 class="Rubric">
             Royal <span style="color: #DAB2FF;">Elixir</span>
@@ -29,6 +32,8 @@
             ger den energikick krigare behöver för att erövra vilken arena som helst<br>
             Både på spelplanen, och i livet.
         </p>
+
+        <!-- BOOTSTRAP knapp -->
         <a href=""
             class="btn btn-primary shop-button"
             style="background-color:#FFDF46; color:#000; font-size:18px; padding:20px 90px; font-family: 'Roboto', sans-serif; font-weight: 800; border-radius: 10px;">
@@ -38,6 +43,7 @@
         <p class="Sodafacts">Läs här om läskfakta</p>
     </div>    
 
+    <!-- Rektangel där man kan läsa vart produkten finns -->
     <div class="AvailableHere">
         <h2 class="AvailableRubric">Finns här!</h2>
 
@@ -48,8 +54,13 @@
         </div>
     </div>
 
+    <!-- Container som håller i reklamen, samt en wrapper för att "Ny!" texten skall alltid ligga pås -->
     <div class="ad-container">
-        <img src="images/advertisement1.png" alt="1" class="ad1">
+        <div class = "ad-wrapper">
+            <img src="images/advertisement1.png" alt="1" class="ad1">
+            <div class="AdvertisementPopup">Ny!</div>
+        </div>
+        
         <img src="images/advertisement2.png" alt="2" class="ad2">
         <img src="images/advertisement3.png" alt="3" class="ad3">
     </div>

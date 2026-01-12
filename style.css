@@ -1,39 +1,35 @@
 body {
-   min-height: 100vh;
-    
+    min-height: 100vh; /* Säkerställer att bakgrunden täcker hela skärmen även om innehållet är litet */
     margin: 0;
+    /*  gradient */
     background: linear-gradient(107.89deg, #5C158F 31.16%, #8000D9 74.02%);
     font-family: 'Roboto', sans-serif;
 }
 
 footer {
-    position: fixed;       /* pins it to the viewport */
-    bottom: 0;             /* bottom of screen */
-    left: 20px;               /* left edge */
-    width: 100%;           /* full width */
-    padding: 20px 0;
+    position: fixed;       
+    bottom: 0;             
+    left: 20px;               
+    width: 100%;           
     text-align: left;
     color: white;
     font-size: 14px;
-    
-    z-index: 1000;         /* ensures it stays above other content */
+    z-index: 1000;      /* er till att footern inte hamnar bakom andra element */   
 }
 
 .crown{
     width: 175px;
     height: auto;
-    display: flex;
-    margin: 50px auto 0 200px;
+    margin: 50px auto 0 200px; /* Positionerar kronan med marginaler */
 }
 
 .mainparagraph {
     text-align: left;
     color: white;
-    margin: auto 0 0 130px;
+    margin: auto 0 0 130px; /* Trycker ut texten från vänsterkanten */
 }
 
 .Rubric {
-    font-family: 'Roboto', sans-serif;
     font-weight: 500;
     font-size: 128px;
     line-height: 84px;
@@ -41,7 +37,6 @@ footer {
 }
 
 .Tagline{
-    font-family: 'Roboto', sans-serif;
     font-weight: 400;
     font-size: 40px;
     line-height: 36px;
@@ -50,13 +45,12 @@ footer {
 }
 
 .Infotext{
-    font-family: 'Roboto', sans-serif;
     font-weight: 300;
     font-size: 24px;
     line-height: 28px;
     margin: 0 0 40px 0;
     color: #FFFFFF;
-    max-width: 600px;
+    max-width: 600px; /* Bra för läsbarhet så raderna inte blir för långa */
 }
 
 .Sodafacts{
@@ -68,19 +62,22 @@ footer {
     color: #FFFFFF;
     max-width: 600px;
     text-decoration: underline;
+    cursor: pointer; 
 }
+
+/* --- Positionering av element --- */
 
 .energyimg{
     width: 60px;
     height: auto;
     display: block;
-    
+
     top: 335px;
     left: 52px;
-
     position: absolute;
 }
 
+/* Denna klass används för mobil-vyn */
 .energyimghidden{
     display: none;
 }
@@ -91,56 +88,78 @@ footer {
     padding: 8px 5px 0 5px;
     font-family: 'Roboto', sans-serif;
 
-    position: fixed;
-    bottom: 15px;          /* distance from bottom */
-    left: 50%;             /* center horizontally */
-    transform: translateX(-50%);
+    position: fixed; /* Fäster rutan längst ner på skärmen */
+    bottom: 15px;          
+    left: 50%;             /* Flyttar vänsterkanten till mitten */
+    transform: translateX(-50%); /* Flyttar tillbaka elementet 50% av sin egen bredd = perfekt centrerat */
     
     z-index: 1000;
 }
 
 
 .AvailableRubric{
-    justify-self: center;
+    justify-self: center; 
+    text-align: center;   
     font-size: 18px;
     font-weight: 300;
     line-height: 28px;
     color: #FFFFFF;
-
     margin-bottom: 0;
 }
 
 .store-logo{
     width: 125px;
     height: auto;
-    
     margin: 0 15px 0 15px;
 }
 
+/* Specifik justering för första loggan */
 .store-logo:first-child{
     width: 135px;
     height: auto;
 }
 
+/* Justering för sista loggan */
 .store-logo:last-child{
-    transform: translateY(-15px);
+    transform: translateY(-15px); /* Flyttar upp den sista loggan lite */
 }
 
 .ad-container{
     display: flex;
-    flex-direction: column; /* stack ads vertically */
-    gap: 20px; /* spacing between ads */
-
+    flex-direction: column; 
+    gap: 20px; 
 }
 
-.ad1{
-    width: 45vh;
+.ad-wrapper {
+    position: absolute;
+    top: 10vh;   
+    right: 440px; 
+}
+
+.ad1 {
+    width: 40vh; 
     height: auto;
     display: block;
-    
-    position:  absolute;
-    top: 10vh;
-    right: 47vh;
+    transform-origin: bottom right;
+}
+
+.AdvertisementPopup {
+    position: absolute; 
+    top: -15px;          
+    left: 33vh;         
+    width: 10vh;       
+    height: 5vh;      
+    background-color: red;
+    border-radius: 8px;
+    z-index: 10; 
+    display: flex;             
+    justify-content: center;   
+    align-items: center;       
+    font-family: 'Roboto', sans-serif;
+    color: white;              
+    font-size: 2.4vh;          
+    font-weight: 800;         
+    text-align: center; 
 }
 
 .ad2{
@@ -163,23 +182,29 @@ footer {
     right: 100px;
 }
 
+/* --- Media Queries (Responsivitet) --- */
+
+/* Brytpunkt vid 1675px */
 @media (max-width: 1675px) {
+    
+    /* Centrera huvudtexten när skärmen blir smalare */
    .mainparagraph {
-    display: flex;
-    flex-direction: column;
-    align-items: center;    /* horizontal center */
-    justify-content: center; /* vertical center if needed */
-    margin: 0 auto;
-    text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;    
+        justify-content: center; 
+        margin: 0 auto; /* Nollställer tidigare marginaler och centrerar blocket */
+        text-align: center;
     }
 
+    /* Ändrar positionering av butiks-rutan från fixed till relative */
     .AvailableHere {
-        position: relative; /* allow it to flow with content */
-        bottom: auto;       /* reset bottom */
-        left: auto;         /* reset horizontal centering */
-        transform: none;    /* reset transform */
-        margin: 20px auto;  /* optional spacing at bottom */
-        text-align: center; /* center content */
+        position: relative; 
+        bottom: auto;       
+        left: auto;         
+        transform: none;   
+        margin: 20px auto;  
+        text-align: center; 
         border-radius: 0;
     }
 
@@ -188,6 +213,7 @@ footer {
         text-align: center;
     }
 
+    /* Visar den gömda blixt-bilden som ligger i flödet */
     .energyimghidden{
         width: 80px;
         height: auto;
@@ -196,6 +222,7 @@ footer {
         margin: 30px auto 0 auto;
     }
 
+    /* Döljer den absolut positionerade blixten som inte passar i mobilvy */
     .energyimg{
         display: none;
     }
@@ -205,27 +232,50 @@ footer {
         height: auto;
         margin: 20px auto 0 auto;
         position: relative;
-        justify-content: center;
+        display: flex;
     }
 
     .ad-container {
         display: flex;
-        flex-direction: column; /* stack vertically */
-        align-items: center;    /* center horizontally */
+        flex-direction: column; 
+        align-items: center;   
         justify-content: center;
-        margin: 15px auto;      /* spacing from other content */
+        margin: 15px auto;      
     }
 
+    /* Nollställer absolut positionering för reklam-bilderna så de hamnar under varandra */
     .ad1, .ad2, .ad3 {
-        position: relative;     /* remove absolute positioning */
+        position: relative;     
         top: auto;
         right: auto;
-        width: 60%;             /* scale ads */
+        width: 60%;             
         max-width: 400px;
-        margin: 20px 0;         /* spacing between stacked ads */
+        margin: 20px 0;         
+    }
+    
+    .ad-wrapper {
+        position: relative;       
+        top: auto;
+        right: auto;
+        width: 60%;               
+        max-width: 400px;
+        margin: 20px 0 auto 0;    
+    }
+    
+    .ad-wrapper .ad1 {
+        width: 100%;              
+        height: auto;
+        display: block;
     }
 
-    .ad1{
-        margin-bottom: 0px;
+    .AdvertisementPopup{
+        display: none; /* Döljer "Ny!"-skylten på mindre skärmar */
+    }
+}
+
+/* Hanterar skärmar som är låga (t.ex. laptops) */
+@media (max-height: 900px) {
+    .ad-wrapper {
+        top: 15vh;  
     }
 }
