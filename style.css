@@ -184,8 +184,8 @@ footer {
 
 /* --- Media Queries (Responsivitet) --- */
 
-/* Brytpunkt vid 1675px */
-@media (max-width: 1675px) {
+/* Brytpunkt vid 1575px */
+@media (max-width: 1575px) {
     
     /* Centrera huvudtexten när skärmen blir smalare */
    .mainparagraph {
